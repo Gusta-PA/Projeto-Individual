@@ -8,7 +8,7 @@ nav {
     background-color: #232323;
     color: white;
 
-    border-bottom: solid 3px;
+    border-bottom: solid 2px;
     border-bottom-color: #c19d31;
 
     height: 10vh;
@@ -77,13 +77,35 @@ nav ul li:hover {
     font-size: 100%;
     background-color: #c19d31;
     border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBotoes a {
+    text-decoration: none;
+    width: 45%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 2vh;
+
+    color: white;
 }
 
 .navBotoes #botaoLogin {
     background-color: #252525;
     color: white;
     font-weight: bold;
-    font-size: 100%;
+}
+
+.navBotoes #botaoCadastrar {
+    background-color: #c19d31;
+    color: black;
+    font-weight: bold;
 }
 
 #botaoLogin:hover {
@@ -137,7 +159,7 @@ nav ul li:hover {
 }
 
 .containerConteudo {
-    margin-top: 5%;
+    margin-top: 10%;
     width: 55%;
     color: white;
     justify-self: center;
@@ -147,11 +169,11 @@ nav ul li:hover {
 }
 
 .containerConteudo span {
-    font-size: 5.5vh;
+    font-size: 4.5vh;
 }
 
 .imagensDinamicas {
-    width: 90%;
+    width: 80%;
     height: 70vh;
 
     display: flex;
@@ -227,7 +249,6 @@ nav ul li:hover {
 .overlay {
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
     height: 50%;
     background-image: linear-gradient(to top, black, #000000d4, #00000075, #00000000);
@@ -242,7 +263,7 @@ nav ul li:hover {
     padding: 10px;
     box-sizing: border-box;
 
-    font-size:2.5vh;
+    font-size: 2.5vh;
 }
 
 .imagensDinamicas #controle_de_dividas:hover .overlay {
@@ -255,4 +276,88 @@ nav ul li:hover {
 
 .imagensDinamicas #administracao_monetaria:hover .overlay {
     opacity: 1;
+}
+
+.backgroundLogin {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Images/goldenMandala.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.backgroundLogin img {
+    width: 30%;
+
+    margin-top: 20%;
+}
+
+.containerLogin {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 80vh;
+    margin-right: 5%;
+
+    border: solid rgb(219, 170, 55)2px;
+    border-radius: 5px;
+
+    color: white;
+    align-items: center;
+}
+
+.barraSuperior {
+    width: 100%;
+    height: 5vh;
+
+    background: linear-gradient(to left, #c19d31, #7e7100);
+
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+
+    font-weight: bold;
+}
+
+.camposLogin {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vh;
+}
+
+.camposLogin input {
+    width: 100%;
+    height: 3vh;
+
+    text-align: center;
+
+    border: none;
+    border-radius: 5px;
+
+}
+
+.camposLogin button {
+    width: 50%;
+    height: 5vh;
+
+    background: linear-gradient(to top, #c28633, rgb(255, 230, 0));
+
+    border-radius: 5px;
+    border: none;
+
+    justify-self: center;
+    align-self: center;
 }
