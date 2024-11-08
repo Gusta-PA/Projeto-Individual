@@ -7,24 +7,39 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="shortcut icon" href="../Images/crownIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/touroLogo.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="backgroundLogin">
+
         <div class="containerLogin">
             <div class="barraSuperior">LOGIN</div>
+            <p id="setaVoltar"><a href="index.html"><span style='font-size:36px;'>&#8592;</span> Voltar</a></p>
 
-            <img src="../Images/crownIcon.png" alt="">
 
-            <div class="camposLogin">
-                <label for="Email">Email</label>
-                <input type="email" id="input_email"> <br>
+            <div class="Login">
+                <img src="../Images/touroLogo.png" alt="">
 
-                <label for="Senha">Senha</label>
-                <input type="password" id="input_senha"> <br>
+                <div class="camposLogin">
 
-                <button>Entrar</button>
+                    <label for="Email">Email</label>
+                    <div class="form">
+                        <input class="input" placeholder="seuEmail@email.com" required="" type="email">
+                        <span class="input-border"></span>
+                    </div>
+
+                    <label for="Senha">Senha</label>
+                    <div class="form">
+                        <input class="input" placeholder="Digite sua Senha" required="" type="password">
+                        <span class="input-border"></span>
+                    </div>
+
+                    <button>Entrar</button> <br>
+                    <div class="perguntaCadastro">
+                        <span>Não tem uma conta? <a href="cadastro.html" id="linkCadastro">Cadastre-se</a>!</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
