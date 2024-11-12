@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: rgba(0, 0, 0, 0.914);
@@ -5,7 +9,8 @@ body {
 }
 
 nav {
-    background-color: #232323;
+    width: 80%;
+    background-color: transparent;
     color: white;
 
     border-bottom: solid 2px;
@@ -16,7 +21,9 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
+    justify-self: center;
 }
 
 nav ul {
@@ -45,7 +52,7 @@ nav ul li a {
 
 footer {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     background-color: #232323;
 
     border-top: solid 2px #c19d31;
@@ -77,7 +84,7 @@ footer span {
 }
 
 .logo img {
-    width: 30%;
+    width: 20%;
     height: 8vh;
 }
 
@@ -144,7 +151,7 @@ footer span {
 .background {
     width: 100%;
     height: 80vh;
-    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('../Images/background.png');
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('../Images/background2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -218,6 +225,8 @@ footer span {
 .imagensDinamicas #administracao_monetaria:hover {
     transition: 0.5s;
     filter: grayscale(0%);
+    transform: scale(1.05);
+
 }
 
 .imagensDinamicas #administracao_monetaria img {
@@ -239,6 +248,7 @@ footer span {
 .imagensDinamicas #investimentos:hover {
     transition: 0.5s;
     filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
 .imagensDinamicas #investimentos img {
@@ -262,6 +272,8 @@ footer span {
 .imagensDinamicas #controle_de_dividas:hover {
     transition: 0.5s;
     filter: grayscale(0%);
+    transform: scale(1.05);
+
 }
 
 .imagensDinamicas #controle_de_dividas img {
@@ -467,6 +479,11 @@ input:focus~.input-border {
     color: #ffc516;
 }
 
+#setaVoltar:hover {
+    filter: brightness(80%);
+    transition: 0.3s;
+}
+
 .perguntaCadastro {
     width: 21vw;
     font-size: 2.5vh;
@@ -502,6 +519,8 @@ input:focus~.input-border {
     justify-content: center;
     align-items: center;
     gap: 2vh;
+
+    margin-bottom: 5%;
 }
 
 .camposCadastro label {
@@ -511,7 +530,7 @@ input:focus~.input-border {
     align-self: flex-start;
 }
 
-.camposCadastro button{
+.camposCadastro button {
     width: 50%;
     height: 5vh;
 
@@ -528,7 +547,7 @@ input:focus~.input-border {
     font-weight: bold;
 }
 
-.camposCadastro button:hover{
+.camposCadastro button:hover {
     filter: brightness(80%);
 }
 
@@ -556,7 +575,7 @@ input:focus~.input-border {
 .sobreMim {
     width: 80%;
     color: white;
-    margin-top: 5%;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
 
@@ -574,9 +593,198 @@ input:focus~.input-border {
 .imagemPerfil {
     width: 40%;
     border: solid 2px yellow;
+    max-width: 30vw;
+    max-height: 50vh;
 }
 
-.imagemPerfil img {
+.missao {
+    width: 70%;
+    margin-top: 10%;
+    color: white;
+}
+
+.missao h1 {
+    color: #c19d31;
+}
+
+.galeria {
     width: 100%;
-    height: 100%;
+}
+
+.containerGaleria {
+    align-items: center;
+    height: 480px;
+    max-height: 1000vh;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+
+.itemGaleria {
+    height: 200px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 330px;
+    border-radius: 15px;
+    background-size: contain;
+}
+
+.item1 {
+    left: 15%;
+    opacity: .4;
+    transform: translate(-50%);
+}
+
+.item2, .item4 {
+    height: 250px;
+    opacity: 0.8;
+    width: 380px;
+    z-index: 1;
+}
+
+.item2 {
+    left: 30%;
+    transform: translate(-50%);
+}
+
+.item3 {
+    box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%);
+    width: 430px;
+    z-index: 2;
+}
+
+.item4 {
+    left: 70%;
+    transform: translate(-50%);
+}
+
+.controleGaleria {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    height: 100px;
+}
+
+.controleGaleria button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0 50px;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.controleGaleria-button:focus{
+    outline: none;
+}
+
+.controleGaleria-previou{
+    position: relative;
+}
+
+.controleGaleria-previous::before{
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    left: -50px;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
+
+.controleGaleria-previous:hover::before{
+    left: -40%;
+}
+
+.controleGaleria-next{
+    position:relative;
+}
+
+.controleGaleria-next::before{
+    border: solid #0000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    padding: 10px;
+    position: absolute;
+    right: -30px;
+    top: 45;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    width: 5px;
+}
+
+
+.controleGaleria-next:hover::before{
+    right: -40px;
+}
+
+.navGaleria{
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.galeria nav li{
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+}
+
+.navGaleria li.galeria-item-selected{
+    background: #555;
+}
+
+.bodyPrincipal{
+    width: 80%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    justify-self: center;
+}
+
+.bodyPrincipal h1{
+    border-bottom: solid 1px yellow;
+}
+
+.conteudosDidaticos{
+    margin-top: 5%;
+    width: 80%;
+    height: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    justify-self: center;
+}
+
+.conteudosDidaticos h1{
+    border-bottom: solid 1px yellow;
+}
+
+#div_teste{
+    width: 80%;
 }
