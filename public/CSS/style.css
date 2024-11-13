@@ -393,7 +393,7 @@ footer span {
 .form {
     --width-of-input: 40vh;
     --border-height: 1px;
-    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-before-color: #dddddd63;
     --border-after-color: #c19d31;
     --input-hovered-color: #d4ae151f;
     position: relative;

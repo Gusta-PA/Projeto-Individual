@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="shortcut icon" href="../Images/touroLogo.png" type="image/x-icon">
+
     <script src="../JS/login_cadastro.js"></script>
 </head>
 
@@ -26,34 +27,41 @@
 
                         <label for="Email">Nome Completo</label>
                         <div class="form">
-                            <input class="input" placeholder="Digite seu nome" required="" type="text">
+                            <input class="input" placeholder="Digite seu nome" required="" type="text" id="input_nome"
+                                onblur="cadastrar()">
                             <span class="input-border"></span>
                         </div>
 
                         <label for="Email">Email</label>
                         <div class="form">
-                            <input class="input" placeholder="seuEmail@email.com" required="" type="email">
+                            <input class="input" placeholder="seuEmail@email.com" required="" type="email"
+                                id="input_email" oninput="cadastrar()">
                             <span class="input-border"></span>
                         </div>
-                        
+
                         <label for="Email">Data de Nascimento</label>
                         <div class="form">
-                            <input class="input" placeholder="seuEmail@email.com" required="" type="date">
+                            <input class="input" placeholder="seuEmail@email.com" required="" type="date" id="input_dtNasc">
                             <span class="input-border"></span>
                         </div>
-                        
+
 
                     </div>
                     <div class="camposCadastro">
-                        
-                        <label for="Senha">Senha</label>
+
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; ">
+                            <label for="Senha">Senha</label><div style="font-size: small;"> Ver senha<input type="checkbox" onclick="verSenha()"></div>
+                        </div>
                         <div class="form">
-                            <input class="input" placeholder="Digite sua Senha" required="" type="password">
+                            <input class="input" placeholder="Digite sua Senha" required="" type="password"
+                                id="input_senha" onblur="cadastrar()">
                             <span class="input-border"></span>
                         </div>
+
                         <label for="Senha">Confirmar Senha</label>
                         <div class="form">
-                            <input class="input" placeholder="Confirme sua Senha" required="" type="password">
+                            <input class="input" placeholder="Confirme sua Senha" required="" type="password"
+                                id="input_confirmar_senha" onblur="cadastrar()">
                             <span class="input-border"></span>
                         </div>
 
@@ -61,7 +69,7 @@
                     </div>
                 </div>
                 <div class="perguntaCadastro">
-                    <span>Já tem uma conta? <a href="login.html"id="linkCadastro"> Entre</a>!</span>
+                    <span>Já tem uma conta? <a href="login.html" id="linkCadastro"> Entre</a>!</span>
                 </div>
             </div>
         </div>

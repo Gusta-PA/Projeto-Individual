@@ -13,6 +13,7 @@ function newContent(opcao) {
         div_controle_dividas.style.display = 'none'
 
         window.location = '#div_investimentos'
+        
     } else if (opcao == 'div_controle_dividas') {
         div_adm_monetaria.style.display = 'none'
         div_investimentos.style.display = 'none'
