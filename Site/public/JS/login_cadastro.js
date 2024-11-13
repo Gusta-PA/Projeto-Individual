@@ -46,7 +46,7 @@ function cadastrar() {
         confirmarSenhaVar == ""
     ) {
         
-        if (nome <= 5) {
+        if (nomeVar <= 5) {
             input_nome.style.border = 'solid 1px red'
             console.log('nome não validado')
             return
@@ -56,7 +56,7 @@ function cadastrar() {
             console.log('nome validado')
         }
 
-        if (email.indexOf('.') == -1 || email.indexOf('@') == -1) {
+        if (emailVar.indexOf('.') == -1 || emailVar.indexOf('@') == -1) {
             input_email.style.border = 'solid 1px red'
             console.log('email não validado')
             return
@@ -67,10 +67,8 @@ function cadastrar() {
             console.log('email validado')
         }
 
-        finalizarAguardar();
+        // finalizarAguardar();
         return false;
-    } else {
-        setInterval(sumirMensagem, 5000);
     }
 
     // Enviando o valor da nova input
@@ -84,7 +82,7 @@ function cadastrar() {
             // Agora vá para o arquivo routes/usuario.js
             nomeServer: nomeVar,
             emailServer: emailVar,
-            dtNascServer: confirmarSenhaVar,
+            dtNascServer: dtNascVar,
             senhaServer: senhaVar,
         }),
     })
@@ -99,14 +97,14 @@ function cadastrar() {
                 });
 
                 limparFormulario();
-                finalizarAguardar();
+                // finalizarAguardar();
             } else {
                 throw "Houve um erro ao tentar realizar o cadastro!";
             }
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
     return false;
@@ -118,6 +116,6 @@ function cadastrar() {
 // }
 
 
-// function verSenha(){
-//     input_senha.type = input_senha.type === 'password' ? 'text' : 'password'
-// }
+function verSenha(){
+    input_senha.type = input_senha.type === 'password' ? 'text' : 'password'
+}
