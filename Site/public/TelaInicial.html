@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Inicial</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="shortcut icon" href="../Images/touroLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="Images/touroLogo.png" type="image/x-icon">
 
-    <script src="../JS/TelaInicial.js"></script>
+    <script src="JS/TelaInicial.js"></script>
 </head>
 
 <body>
     <nav>
         <div class="logo">
-            <img src="../Images/touroLogo.png" alt="">
+            <img src="Images/touroLogo.png" alt="">
             <h1 class="Titulo"><a href="index.html">WealthWise</a></h1>
         </div>
 
@@ -70,35 +70,130 @@
                 considerar investimentos que possam fazer o dinheiro crescer ao longo do tempo. Com uma boa
                 administração, é possível lidar melhor com imprevistos, alcançar objetivos e construir uma base
                 financeira sólida para o futuro, promovendo mais tranquilidade e autonomia na vida financeira.</p>
-                <br>
-                <h2>Pilares da Administração Monetária</h2>
+            <br>
+            <h2>Pilares da Administração Monetária</h2>
 
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div class="containerPilares">
-                        <h3>Orçamento</h3>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
+
+                <div class="containerPilares" id="containerOrçamento" onclick="abrirPilaresADMmonetaria('orçamento')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Orçamento</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-                    <div class="containerPilares">
-                        <h3>Poupança</h3>
-                    </div>
-                    <div class="containerPilares">
-                        <h3>Planejamento de Objetivos</h3>
-                    </div>
-                    <div class="containerPilares">
-                        <h3>Educação Financeira</h3>
-                    </div>
+                    <p id="p_orcamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+
+                    <iframe width="640" height="360" src="https://youtu.be/IpnonaWz3QE?si=y628Wou_LI5NGzAo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
+
+                <div class="containerPilares" id="containerPoupanca" onclick="abrirPilaresADMmonetaria('poupança')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Poupança</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_poupanca" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                </div>
+
+                <div class="containerPilares" id="containerPlanejamento" onclick="abrirPilaresADMmonetaria('planejamento')">
+                    <div class="barraSuperiorPilares">
+                        <h3>planejamento de Objetivos</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_planejamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                </div>
+
+                <div class="containerPilares" id="containerEducacao" onclick="abrirPilaresADMmonetaria('educacao')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Educação Financeira</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_educacao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                </div>
+            </div>
         </div>
 
         <div id="div_investimentos" style="display: none;">
             <h1>Investimentos</h1>
-            <p>Investimentos são formas de aplicar dinheiro visando o crescimento de patrimônio ao longo do tempo. Diferente de simplesmente poupar, investir envolve colocar o dinheiro em ativos que têm potencial de retorno, como ações, imóveis ou fundos. Ao investir, buscamos aumentar nosso capital e, assim, conquistar objetivos de médio e longo prazo. Entender o básico sobre investimentos, incluindo riscos e rendimentos, é o primeiro passo para fazer o dinheiro trabalhar a nosso favor e alcançar maior segurança financeira.</p>
+            <p>Investimentos são formas de aplicar dinheiro visando o crescimento de patrimônio ao longo do tempo.
+                Diferente de simplesmente poupar, investir envolve colocar o dinheiro em ativos que têm potencial de
+                retorno, como ações, imóveis ou fundos. Ao investir, buscamos aumentar nosso capital e, assim,
+                conquistar objetivos de médio e longo prazo. Entender o básico sobre investimentos, incluindo riscos e
+                rendimentos, é o primeiro passo para fazer o dinheiro trabalhar a nosso favor e alcançar maior segurança
+                financeira.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
+
+                    <div class="containerPilares" id="containerPerfil" onclick="abrirPilaresInvestimento('perfil')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Perfil</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_perfil" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerRiscoGanho" onclick="abrirPilaresInvestimento('riscoGanho')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Risco e Ganho</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_riscoganho" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerDisciplina" onclick="abrirPilaresInvestimento('disciplina')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Constância e Disciplina</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_disciplina" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerDiversificacao" onclick="abrirPilaresInvestimento('diversificacao')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Diversificação</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_diversificacao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+
+                        <video src=""></video>
+                    </div>
+                </div>
         </div>
 
         <div id="div_controle_dividas" style="display: none;">
             <h1>Controle de Dívidas</h1>
-            <p>Controle de dívidas é o processo de gerenciar compromissos financeiros para evitar que os débitos cresçam e comprometam o orçamento. Isso envolve entender a origem e o valor das dívidas, organizar um plano de pagamento e evitar o acúmulo de novas. Ao manter o controle das dívidas, conseguimos reduzir os impactos dos juros e liberar recursos para outros objetivos financeiros, alcançando maior estabilidade e tranquilidade na vida financeira.</p>
+            <p>Controle de dívidas é o processo de gerenciar compromissos financeiros para evitar que os débitos cresçam
+                e comprometam o orçamento. Isso envolve entender a origem e o valor das dívidas, organizar um plano de
+                pagamento e evitar o acúmulo de novas. Ao manter o controle das dívidas, conseguimos reduzir os impactos
+                dos juros e liberar recursos para outros objetivos financeiros, alcançando maior estabilidade e
+                tranquilidade na vida financeira.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
+
+                    <div class="containerPilares" id="containerConstancia" onclick="abrirPilaresControle('constancia')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Consciência Financeira</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_constancia" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerPagamento" onclick="abrirPilaresControle('pagamento')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Planejamento de Pagamento</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_pagamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerReducao" onclick="abrirPilaresControle('reducao')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Redução de Gastos</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_reducao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+    
+                    <div class="containerPilares" id="containerHabitos" onclick="abrirPilaresControle('habitos')">
+                        <div class="barraSuperiorPilares">
+                            <h3>Mudança de Hábitos</h3> <img src="Images/buttonArrow.png" alt="">
+                        </div>
+                        <p id="p_habitos" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    </div>
+                </div>
         </div>
     </div>
+
+    <footer>
+        <h1>Desenvolvido por <span>Gustavo Pereira</span></h1>
+    </footer>
 </body>
 
 </html>

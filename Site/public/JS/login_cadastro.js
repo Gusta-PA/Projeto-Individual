@@ -1,34 +1,4 @@
-// function cadastrar() {
-//     const nome = input_nome.value
-//     const email = input_email.value
-//     const senha = input_senha.value
-//     const confirmarSenha = input_confirmar_senha.value
-
-//     if (nome <= 5) {
-//         input_nome.style.border = 'solid 1px red'
-//         console.log('nome não validado')
-//     } else {
-//         input_nome.style.border = 'none'
-//         input_nome.style.borderBottom = 'var(--border-height) solid var(--border-before-color)'
-//         console.log('nome validado')
-//     }
-
-//     if (email.indexOf('.') == -1 || email.indexOf('@') == -1) {
-//         input_email.style.border = 'solid 1px red'
-//         console.log('email não validado')
-//     } else {
-//         input_email.style.border = 'none'
-//         input_email.style.borderBottom = 'var(--border-height) solid var(--border-before-color)'
-//         console.log('email validado')
-//     }
-
-//     // alert('Cadastro realizado com sucesso')
-//     // window.location = 'login.html'
-// }
-
 function cadastro() {
-    // aguardar();
-
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = input_nome.value;
@@ -45,7 +15,7 @@ function cadastro() {
         senhaVar == "" ||
         confirmarSenhaVar == ""
     ) {
-        
+
         // if (nomeVar <= 5) {
         //     input_nome.style.border = 'solid 1px red'
         //     console.log('nome não validado')
@@ -147,9 +117,9 @@ function entrar() {
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
 
-                setTimeout(function () {
-                    window.location = "TelaInicial.html";
-                }); // apenas para exibir o loading
+                alert('Login realizado com sucesso!')
+                window.location = "TelaInicial.html";
+
 
             });
 
@@ -159,7 +129,6 @@ function entrar() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                // finalizarAguardar(texto);
             });
         }
 
@@ -171,6 +140,6 @@ function entrar() {
 }
 
 
-function verSenha(){
+function verSenha() {
     input_senha.type = input_senha.type === 'password' ? 'text' : 'password'
 }
