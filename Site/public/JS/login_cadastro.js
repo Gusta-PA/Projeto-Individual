@@ -7,6 +7,9 @@ function cadastro() {
     var senhaVar = input_senha.value;
     var confirmarSenhaVar = input_confirmar_senha.value;
 
+    var metaVar = 0
+    var totalGuardadoVar = 0
+
     // Verificando se há algum campo em branco
     if (
         nomeVar == "" ||
@@ -15,29 +18,6 @@ function cadastro() {
         senhaVar == "" ||
         confirmarSenhaVar == ""
     ) {
-
-        // if (nomeVar <= 5) {
-        //     input_nome.style.border = 'solid 1px red'
-        //     console.log('nome não validado')
-        //     return
-        // } else {
-        //     input_nome.style.border = 'none'
-        //     input_nome.style.borderBottom = 'var(--border-height) solid var(--border-before-color)'
-        //     console.log('nome validado')
-        // }
-
-        // if (emailVar.indexOf('.') == -1 || emailVar.indexOf('@') == -1) {
-        //     input_email.style.border = 'solid 1px red'
-        //     console.log('email não validado')
-        //     return
-
-        // } else {
-        //     input_email.style.border = 'none'
-        //     input_email.style.borderBottom = 'var(--border-height) solid var(--border-before-color)'
-        //     console.log('email validado')
-        // }
-
-        // finalizarAguardar();
         console.log('algum campo não foi validado')
         return false;
     }
@@ -55,6 +35,8 @@ function cadastro() {
             emailServer: emailVar,
             dtNascServer: dtNascVar,
             senhaServer: senhaVar,
+            metaServer: metaVar,
+            totalGuardadoServer: totalGuardadoVar
         }),
     })
         .then(function (resposta) {
@@ -65,7 +47,7 @@ function cadastro() {
 
                 setTimeout(() => {
                     window.location = "login.html";
-                }, '1000');
+                });
 
                 limparFormulario();
                 // finalizarAguardar();
@@ -81,65 +63,50 @@ function cadastro() {
     return false;
 }
 
+// Exemplo de login no frontend
 function entrar() {
-    // aguardar();
+    const email = document.getElementById("input_email").value;
+    const senha = document.getElementById("input_senha").value;
 
-    const emailVar = input_email.value;
-    const senhaVar = input_senha.value;
-
-    if (emailVar == "" || senhaVar == "") {
-        alert('Preencha os campos')
-        return false;
-    }
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
+    fetch('/usuarios/autenticar', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar,
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-
-                alert('Login realizado com sucesso!')
-                window.location = "TelaInicial.html";
-
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
+        body: JSON.stringify({ emailServer: email, senhaServer: senha }),
     })
+        .then(response => {
+            if (response.ok) {
+                return response.json(); // Retorna os dados do usuário
+            } else {
+                throw new Error("Falha no login. Verifique suas credenciais.");
+            }
+        })
+        .then(dadosUsuario => {
+            console.log("Dados do usuário recebidos:", dadosUsuario);
 
-    return false;
+            // Configurando o sessionStorage
+            sessionStorage.setItem("ID_USER", dadosUsuario.id); // 'id' está vindo do backend como 'idUser'
+            sessionStorage.setItem("NOME_USUARIO", dadosUsuario.nome);
+            sessionStorage.setItem("META_COFRE", dadosUsuario.meta); // 'meta' enviado do backend
+            sessionStorage.setItem("TOTAL_GUARDADO", dadosUsuario.totalGuardado); // 'totalGuardado' está correto
+            sessionStorage.setItem("PERFIL", dadosUsuario.perfil);
+            ;
+
+            // Redirecionar para outra página após o login, se necessário
+            window.location.href = "dashboard.html";
+        })
+        .catch(erro => {
+            console.error("Erro ao fazer login:", erro);
+            alert("Falha no login. Tente novamente.");
+        });
 }
-
 
 function verSenha() {
     input_senha.type = input_senha.type === 'password' ? 'text' : 'password'
+}
+
+function sair(){
+    sessionStorage.clear()
+    window.location = 'index.html'
 }

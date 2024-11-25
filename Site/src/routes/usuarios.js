@@ -12,4 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post('/novaMeta', function(req,res){
+    usuarioController.definirNovaMeta(req,res)
+})
+
+router.post("/atualizarTotalGuardado", function (req, res) {
+    usuarioController.atualizarTotalGuardado(req, res)
+})
+
 module.exports = router;

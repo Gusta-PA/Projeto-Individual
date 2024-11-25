@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="shortcut icon" href="Images/touroLogo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="JS/cofrinho.js"></script>
+    <script src="JS/login_cadastro.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="Images/touroLogo.png" alt="">
+            <h1 class="Titulo"><a href="index.html">WealthWise</a></h1>
+        </div>
+
+        <ul>
+            <li><a href="TelaInicial.html">Conteúdos</a></li>
+            <li><a href="#missao">Missões</a></li>
+            <li>Simuladores</li>
+            <li>FAQ</li>
+        </ul>
+
+        <div class="navBotoes">
+            <button id="botaoLogin" onclick="sair()">Sair</button>
+        </div>
+    </nav>
+
+    <div class="bodyDash">
+        <div>
+            <span id="b_usuario" style="color: #c19d31;">usuario</span> <br>
+            <span style="font-size: 5vh; font-weight: bold;">Dashboard</span>
+        </div>
+
+
+        <div class="conteudo">
+
+            <div style="display: flex; flex-direction: column; width: 40%; height: 100%;">
+                <div class="kpiInvestidor">
+                    <div class="barraSuperiorDash">
+                        Seu Perfil de Investidor
+                    </div>
+                    <div class="conteudoKPI">
+                        Conservador
+                    </div>
+                </div>
+
+                <div class="grafico">
+                    <div class="barraSuperiorDash">
+                        Perfis Gerais
+                    </div>
+                    <div class="conteudoGrafico">
+                        <canvas id="chartPizza" style="padding: 5px"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cofrinhoContainer">
+                <div class="barraSuperiorDash">
+                    Cofrinho
+                </div>
+
+                <div class="criarCofre" id="div_criarCofre">
+                    <h1 style="border-bottom: solid 1px #c28633;">Criar novo Cofrinho</h1>
+
+                    Nova Meta: <br>
+                    <input type="Number" id="input_nova_meta" placeholder="Digite Aqui">
+
+                    <img src="Images/porco1.png" alt="">
+                    <button onclick="novaMeta()">Confirmar</button>
+                </div>
+
+                <div class="conteudoCofre" style="display: none;" id="div_conteudoCofre">
+                    <h1>Meu Cofrinho</h1>
+                    <p>Meta: R$ <span id="span_meta">meta</span></p>
+                    <p>Total guardado: R$ <span id="guardado">0</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" id="progress"></div>
+                    </div>
+                    <p class="progress-text" id="progress-text">0% da meta atingida</p>
+
+                    Digite um Valor: <br>
+                    <input type="text" id="input_valor">
+                    <div class="botoesCofrinho">
+                        <button onclick="atualizarProgressoAdicionarRetirar('adicionar')">Adicionar</button>
+                        <button onclick="atualizarProgressoAdicionarRetirar('retirar')">Retirar</button>
+                    </div>
+
+                    <button style="margin-top: 3%;">Cancelar Cofrinho</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    span_meta.innerHTML = sessionStorage.META_COFRE
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    const chartPerfisInvestimento = document.getElementById("chartPizza");
+
+    const chartPizzaQtd = new Chart(chartPerfisInvestimento, {
+        type: "pie",
+        data: {
+            labels: ["Conservador", "Moderado", "Agressivo"], // Perfis de investidor
+            datasets: [{
+                data: [50, 30, 20], // Quantidade em cada perfil
+                backgroundColor: ["#4CAF50", "#FFC107", "#FF5722"], // Cores para cada segmento
+                borderWidth: 3, // Espessura das bordas
+                borderColor: 'black'
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top', // Posição da legenda
+                },
+                tooltip: {
+                    enabled: true,
+                },
+            },
+        },
+    });
+</script>
+
+</script>

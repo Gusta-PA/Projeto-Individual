@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     background-color: rgba(0, 0, 0, 0.914);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 nav {
@@ -332,7 +332,7 @@ footer span {
 
 .backgroundLogin img {
     width: 30%;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
 }
 
 .Login {
@@ -376,6 +376,7 @@ footer span {
 
 .camposLogin {
     width: 60%;
+    height: 40vh;
     display: flex;
     flex-direction: column;
 
@@ -593,7 +594,7 @@ input:focus~.input-border {
 
 .imagemPerfil {
     width: 40%;
-    border: solid 2px yellow;
+    border: solid 2px #c19d31;
     max-width: 30vw;
     max-height: 50vh;
 }
@@ -768,7 +769,7 @@ input:focus~.input-border {
 }
 
 .bodyPrincipal h1 {
-    border-bottom: solid 1px yellow;
+    border-bottom: solid 1px #c19d31;
 }
 
 .conteudosDidaticos {
@@ -784,7 +785,7 @@ input:focus~.input-border {
 }
 
 .conteudosDidaticos h1 {
-    border-bottom: solid 1px yellow;
+    border-bottom: solid 1px #c19d31;
 }
 
 .containerPilares {
@@ -814,4 +815,205 @@ input:focus~.input-border {
     transform: rotate(90deg);
 
     align-self: center;
+}
+
+.bodyDash {
+    width: 80%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    justify-self: center;
+
+    padding: 10px;
+}
+
+.conteudo {
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+.kpiInvestidor {
+    width: 100%;
+    height: 15vh;
+    box-shadow: 0px 0px 5px 2px #c28633;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+
+    background-color: black;
+}
+
+.barraSuperiorDash {
+    color: black;
+    font-weight: bold;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: flex-start;
+
+    background: linear-gradient(to bottom, #c19d31, #c28633);
+
+    border-radius: 10px 10px 0 0;
+}
+
+.conteudoKPI {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.grafico {
+    width: 100%;
+    height: 100%;
+    margin-top: 7%;
+    border-radius: 10px;
+
+    background-color: black;
+    box-shadow: 0px 0px 5px 2px #c28633;
+
+}
+
+.conteudoGrafico {
+    width: 100%;
+    height: 100%;
+}
+
+#chartPizza {
+    height: 40vh;
+}
+
+.cofrinhoContainer {
+    width: 30%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #c28633;
+}
+
+
+.progress-bar {
+    width: 100%;
+    background-color: #2a2929;
+
+    border: double #c19d31 1px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    /* Atualizado dinamicamente */
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#input_valor {
+    background-color: #2a2929;
+    color: white;
+}
+
+.criarCofre {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.criarCofre img {
+    width: 60%;
+}
+
+.criarCofre button {
+    background-color: #c19d31;
+    border-radius: 10px;
+    border-style: none;
+
+    width: 60%;
+    height: 10%;
+    font-weight: bold;
+}
+
+.criarCofre input {
+    background-color: #302f2f;
+    border: solid 1px #c19d31;
+    color: white;
+    border-radius: 10px;
+
+    text-align: center;
+
+    height: 5%;
+    width: 40%;
+}
+
+.criarCofre button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.conteudoCofre {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoesCofrinho {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 3%
+}
+
+.cofrinhoContainer button{
+    height: 4vh;
+
+    border-radius: 5px;
+
+    background-color: #c19d31;
+    font-weight: bold;
+
+    border: none;
+}
+
+.cofrinhoContainer button:hover{
+    opacity: 0.8;
 }
