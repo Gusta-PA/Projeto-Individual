@@ -73,6 +73,9 @@ function atualizarProgressoAdicionarRetirar(botaoSelecionado) {
 
 
 function novaMeta() {
+    div_criarCofre.style.display = 'block'
+    div_conteudoCofre.style.display = 'none'
+
     const novaMetaVar = Number(input_nova_meta.value)
     const idUsuario = sessionStorage.getItem('ID_USER')
 
@@ -110,7 +113,7 @@ function novaMeta() {
                 span_meta.textContent = novaMetaVar
                 atualizarProgresso()
 
-                alert('meta atualizada com sucesso!')
+                alert('Meta atualizada com sucesso!')
 
             })
             .catch(erro => [
@@ -118,66 +121,6 @@ function novaMeta() {
             ])
     }
 
-
-    // Enviando os valores para a API
-    function adicionarCofrinho() {
-        var adicionar = input_adicionar.value
-        var retirar = input_retirar.value
-
-        if (isNaN(adicionar) || isNaN(retirar)) {
-            alert('Insira valores corretos.')
-            return
-        }
-
-        fetch("/usuarios/adicionarCofrinho", {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                adicionarCofrinhoServer: adicionar,
-                retirarCofrinhoServer: retirar
-            }),
-        })
-
-            .then(function (resposta) {
-                console.log('resposta: ', resposta)
-
-                if (resposta.ok) {
-                    console.log('Foi enviado com sucesso!')
-                } else {
-                    throw 'Houve um erro durante a transmissão...'
-                }
-            })
-    }
-
-    function retirarMeta() {
-        var retirar = input_retirar.value
-
-        if (isNaN(adicionar) || isNaN(retirar)) {
-            alert('Insira valores corretos.')
-            return
-        }
-
-        fetch("/usuarios/retirarCofrinho", {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-
-                retirarCofrinhoServer: retirar
-            }),
-        })
-
-            .then(function (resposta) {
-                console.log('resposta: ', resposta)
-
-                if (resposta.ok) {
-                    console.log('Foi enviado com sucesso!')
-                } else {
-                    throw 'Houve um erro durante a transmissão...'
-                }
-            })
-    }
+    input_nova_meta.value = ''
 }
+

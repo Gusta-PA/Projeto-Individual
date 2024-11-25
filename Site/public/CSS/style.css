@@ -1017,3 +1017,7 @@ input:focus~.input-border {
 .cofrinhoContainer button:hover{
     opacity: 0.8;
 }
+
+.bodyTestePerfil{
+    width: 100%;
+}
