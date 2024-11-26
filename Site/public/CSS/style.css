@@ -1003,7 +1003,7 @@ input:focus~.input-border {
     margin-top: 3%
 }
 
-.cofrinhoContainer button{
+.cofrinhoContainer button {
     height: 4vh;
 
     border-radius: 5px;
@@ -1014,10 +1014,156 @@ input:focus~.input-border {
     border: none;
 }
 
-.cofrinhoContainer button:hover{
+.cofrinhoContainer button:hover {
     opacity: 0.8;
 }
 
-.bodyTestePerfil{
+.bodyTestePerfil {
+    width: 80%;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    justify-self: center;
+
+    padding: 10px;
+}
+
+.div_testePerfil p {
+    text-align: center;
+    font-size: large;
+}
+
+.div_testePerfil span {
+    color: #c19d31;
+    font-weight: bold;
+}
+
+.div_testePerfil #botaoTestePerfil {
+    width: 30%;
+    height: 8vh;
+
+    font-weight: bold;
+    font-size: large;
+
+    background: linear-gradient(to left, #c19d31, #c28633);
+
+    border: none;
+    border-radius: 10px;
+}
+
+.div_testePerfil #botaoTestePerfil:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.div_testePerfil h1 {
+    width: 60%;
+    border-bottom: solid 2px #c19d31;
+
+    text-align: center;
+}
+
+.div_testePerfil {
     width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    align-items: center;
+}
+
+.div_questao1 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    gap: 20px;
+}
+
+.div_questao2 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    gap: 20px;
+}
+
+.div_questao3 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    gap: 20px;
+}
+
+.div_questao4 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    gap: 20px;
+}
+
+.div_questao5 {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50vh;
+
+    gap: 20px;
+}
+
+.opcoesTestePerfil {
+    width: 60%;
+    height: 8vh;
+    border-radius: 10px;
+    background: linear-gradient(to left, #c19d31, #c28633);
+
+    font-weight: bold;
+
+
+
+}
+
+.opcoesTestePerfil:hover {
+    opacity: 0.8;
 }

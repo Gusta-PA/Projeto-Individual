@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Teste de Perfil</title>
 
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="Images/touroLogo.png" type="image/x-icon">
+
+    <script src="JS/testePerfil.js"></script>
 </head>
 <body>
     <nav>
@@ -27,7 +30,68 @@
     </nav>
 
     <div class="bodyTestePerfil">
-        
+
+        <div class="div_testePerfil">
+            <h1>Descubra seu Perfil de Investidor!</h1>
+            <p>O teste de consiste de algumas perguntas de múltipla escolha. <br>
+            Seja honesto em suas respostas.</p>
+            <p>A intenção deste teste é dar a você <span>usuario</span> um vislumbre de como você poderia começar a investir nos dias atuais!</p>
+            <button id="botaoTestePerfil" onclick="trocarTela('iniciar')">Iniciar Teste</button>
+        </div>
+
+        <div class="div_questao1" style="display: none;">
+            
+            <h1>1° Qual sua prioridade ao investir?</h1>
+            <button onclick="armazenarQuestão('conservador'); trocarTela('questao1')" class="opcoesTestePerfil">A) Segurança do Capital, mesmo que o retorno seja menor.</button>
+            <button onclick="armazenarQuestão('moderado'); trocarTela('questao1')" class="opcoesTestePerfil">B) Equilíbrio entre segurança e retorno.</button> 
+            <button onclick="armazenarQuestão('agressivo'); trocarTela('questao1')" class="opcoesTestePerfil">C) Segurança do Capital, mesmo que o retorno seja menor.</button>
+        </div>
+
+        <div class="div_questao2" style="display: none;">
+            
+            <h1>2° Como você reagiria a uma perda de 10% no valor de seus investimentos?
+            </h1>
+            <button onclick="armazenarQuestão('conservador'); trocarTela('questao2')" class="opcoesTestePerfil">A) Fico muito preocupado e prefiro reduzir os riscos..</button>
+            <button onclick="armazenarQuestão('moderado'); trocarTela('questao2')" class="opcoesTestePerfil">B) Aceito como parte do processo, mas com cautela.</button> 
+            <button onclick="armazenarQuestão('agressivo'); trocarTela('questao2')" class="opcoesTestePerfil">C) Vejo como uma oportunidade para investir mais.</button>
+        </div>
+
+        <div class="div_questao3" style="display: none;">
+            
+            <h1>3° Qual seria sua escolha ao investir R$ 10.000??</h1>
+            <button onclick="armazenarQuestão('conservador'); trocarTela('questao3')" class="opcoesTestePerfil">A) Deixar tudo em uma aplicação de baixo risco, como poupança ou títulos públicos.</button>
+            <button onclick="armazenarQuestão('moderado'); trocarTela('questao3')" class="opcoesTestePerfil">B) Diversificar entre opções seguras e moderadamente arriscadas.</button> 
+            <button onclick="armazenarQuestão('agressivo'); trocarTela('questao3')" class="opcoesTestePerfil">C) Investir em ações ou alternativas de alto risco com maior potencial de ganho.</button>
+        </div>
+
+        <div class="div_questao4" style="display: none;">
+            
+            <h1>4° Qual a sua experiência com investimentos?</h1>
+            <button onclick="armazenarQuestão('conservador'); trocarTela('questao4')" class="opcoesTestePerfil">A) Sou iniciante e prefiro opções fáceis de entender.</button>
+            <button onclick="armazenarQuestão('moderado'); trocarTela('questao4')" class="opcoesTestePerfil">B) Tenho alguma experiência e gosto de explorar diferentes possibilidades.</button> 
+            <button onclick="armazenarQuestão('agressivo'); trocarTela('questao4')" class="opcoesTestePerfil">C) Sou experiente e confortável com estratégias mais complexas.</button>
+        </div>
+
+        <div class="div_questao5" style="display: none;">
+            
+            <h1>5° Qual é o seu horizonte de tempo para atingir seus objetivos financeiros?</h1>
+            <button onclick="armazenarQuestão('conservador'); trocarTela('questao5')" class="opcoesTestePerfil">A) Curto prazo (até 2 anos).</button>
+            <button onclick="armazenarQuestão('moderado'); trocarTela('questao5')" class="opcoesTestePerfil">B) Médio prazo (2 a 5 anos).</button> 
+            <button onclick="armazenarQuestão('agressivo'); trocarTela('questao5')" class="opcoesTestePerfil">C) Longo prazo (mais de 5 anos).</button>
+        </div>
+
+
+        <div class="div_resultadoTestePerfil" style="display: none;">
+            
+            <span id="usuario">usuario</span>
+            <h1>Seu Perfil de Investidor é:</h1>
+
+            <div id="div_implantar_resultado"></div>
+        </div>
     </div>
 </body>
 </html>
+
+<script>
+    usuario = sessionStorage.getItem('NOME_USUARIO')
+</script>
