@@ -125,10 +125,40 @@ function atualizarTotalGuardado(req, res){
     }
 }
 
+function inserirPerfilInvestidor(req,res){
+    var perfilEscolhidoUsuario = req.body.perfilEscolhidoServer
+    var idUsuario = req.body.idUsuarioServer
+
+    if(perfilEscolhidoUsuario == undefined){
+        res.status(400).send('perfilEscolhido está undefined')
+    } else {
+        usuarioModel.inserirPerfilInvestidorUsuario(perfilEscolhidoUsuario, idUsuario)
+            .then(() => {
+
+                let perfilTexto = ''
+
+                if(perfilEscolhidoUsuario == 1){
+                    perfilTexto = 'Conservador'
+                } else if(perfilEscolhidoUsuario == 2) {
+                    perfilTexto = 'Moderado'
+                } else{
+                    perfilTexto = 'Agressivo'
+                }
+                res.status(200).json({
+                    perfil : perfilTexto
+                })
+            })
+            .catch(erro => {
+                console.log('erro ao enviar o perfilEscolhido: ', erro)
+                res.status(500).send('Erro ao enviar o perfilEscolhido')
+            })
+    }
+}
 
 module.exports = {
     autenticar,
     cadastrar,
     atualizarTotalGuardado,
-    definirNovaMeta
+    definirNovaMeta,
+    inserirPerfilInvestidor
 }

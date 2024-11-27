@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="Images/touroLogo.png" type="image/x-icon">
 
     <script src="JS/TelaInicial.js"></script>
+    <script src="JS/login_cadastro.js"></script>
 </head>
 
 <body>
@@ -20,13 +21,12 @@
 
         <ul>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="#missao">Missões</a></li>
-            <li>Simuladores</li>
+            <li><a href="testePerfil.html">Teste de Perfil</a></li>
             <li>FAQ</li>
         </ul>
 
         <div class="navBotoes">
-            <a href="index.html" id="botaoLogin">Sair</a>
+            <button onclick="sair()" id="botaoLogin">Sair</button>
         </div>
     </nav>
 
@@ -79,30 +79,126 @@
                     <div class="barraSuperiorPilares">
                         <h3>Orçamento</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-                    <p id="p_orcamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    <p id="p_orcamento" style="display: none;">O orçamento pessoal é uma ferramenta essencial para o
+                        controle financeiro, permitindo que você compreenda e administre suas receitas e despesas de
+                        forma eficaz. Ao elaborar um orçamento, é possível identificar onde o dinheiro está sendo gasto,
+                        estabelecer limites para cada categoria de despesa e garantir que os gastos não excedam a renda
+                        disponível. Essa prática facilita a identificação de áreas onde é possível economizar e
+                        direcionar recursos para objetivos financeiros específicos. Para elaborar um orçamento pessoal,
+                        siga estes passos: <br> <br>
+                        1. <span style="color: #c19d31;">Anote suas receitas e despesas</span>: Registre todas as fontes
+                        de renda e todas as despesas mensais, incluindo gastos fixos e variáveis. <br> <br>
+                        2. <span style="color: #c19d31;">Agrupe as receitas e despesas</span>: Classifique suas receitas
+                        e despesas em categorias para facilitar a análise. <br> <br>
+                        3. <span style="color: #c19d31;">Analise a situação com atenção</span>: Avalie se seus gastos
+                        estão dentro do planejado e identifique áreas onde é possível reduzir despesas. <br> <br>
+                        4. <span style="color: #c19d31;">Planeje o próximo mês</span>: Com base na análise, ajuste seu
+                        orçamento para o próximo mês, estabelecendo metas realistas de economia e investimento. <br>
+                        <br>
 
-                    
+                        Seguir essas etapas ajudará a manter suas finanças pessoais organizadas e alinhadas com seus
+                        objetivos financeiros. <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Banco Central do Brasil</span></i>
+
+                    </p>
+
+
                 </div>
 
                 <div class="containerPilares" id="containerPoupanca" onclick="abrirPilaresADMmonetaria('poupança')">
                     <div class="barraSuperiorPilares">
                         <h3>Poupança</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-                    <p id="p_poupanca" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    <p id="p_poupanca" style="display: none;">A poupança é o ato de reservar uma parte da renda para
+                        objetivos futuros, seja para emergências, aquisição de bens ou realização de sonhos. Estabelecer
+                        uma rotina de poupança é fundamental para alcançar a independência financeira e garantir
+                        segurança em momentos de imprevistos. Para construir um plano de poupança eficaz, considere os
+                        seguintes passos: <br><br>
+
+                        1. <span style="color: #c19d31;">Conheça seus hábitos de consumo</span>: Liste seus gastos
+                        mensais para entender onde é possível economizar. <br><br>
+
+                        2. <span style="color: #c19d31;">Estabeleça metas de poupança</span>: Defina objetivos claros e
+                        mensuráveis, como economizar para uma viagem ou para a aposentadoria. <br><br>
+
+                        3. <span style="color: #c19d31;">Automatize a poupança</span>: Configure transferências
+                        automáticas para uma conta de poupança assim que receber sua renda, garantindo que a poupança
+                        seja uma prioridade. <br><br>
+
+                        4. <span style="color: #c19d31;">Monitore o progresso</span>: Acompanhe regularmente seus
+                        avanços em direção às metas estabelecidas e ajuste conforme necessário. <br> <br>
+
+                        Seguir esses passos ajudará a criar uma base sólida para alcançar seus objetivos financeiros e
+                        proporcionar tranquilidade em situações inesperadas. <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: ACP</span></i>
+
+                    </p>
                 </div>
 
-                <div class="containerPilares" id="containerPlanejamento" onclick="abrirPilaresADMmonetaria('planejamento')">
+                <div class="containerPilares" id="containerPlanejamento"
+                    onclick="abrirPilaresADMmonetaria('planejamento')">
                     <div class="barraSuperiorPilares">
-                        <h3>planejamento de Objetivos</h3> <img src="Images/buttonArrow.png" alt="">
+                        <h3>Planejamento de Objetivos</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-                    <p id="p_planejamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    <p id="p_planejamento" style="display: none;">Definir objetivos financeiros claros é crucial para
+                        direcionar esforços e recursos de forma eficaz. Estabelecer metas específicas, mensuráveis,
+                        alcançáveis, relevantes e com prazos definidos (metas SMART) facilita o acompanhamento do
+                        progresso e aumenta as chances de sucesso. Para definir e alcançar seus objetivos financeiros,
+                        siga estas etapas: <br><br>
+
+                        1. <span style="color: #c19d31;">Estabeleça metas claras</span>: Determine o que deseja
+                        alcançar, seja comprar uma casa, pagar dívidas ou viajar. <br><br>
+
+                        2. <span style="color: #c19d31;">Defina prazos realistas</span>: Estabeleça quando pretende
+                        alcançar cada meta, considerando sua situação financeira atual. <br><br>
+
+                        3. <span style="color: #c19d31;">Crie um plano de ação</span>: Identifique as etapas necessárias
+                        para alcançar cada objetivo e os recursos necessários. <br><br>
+
+                        4. <span style="color: #c19d31;">Monitore o progresso</span>: Acompanhe regularmente seu avanço
+                        em direção às metas e faça ajustes conforme necessário. <br><br>
+
+                        Seguir essas etapas ajudará a manter o foco e a motivação, facilitando a realização de seus
+                        objetivos financeiros. <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Todos Contam</span></i>
+
+                    </p>
                 </div>
 
                 <div class="containerPilares" id="containerEducacao" onclick="abrirPilaresADMmonetaria('educacao')">
                     <div class="barraSuperiorPilares">
                         <h3>Educação Financeira</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-                    <p id="p_educacao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    <p id="p_educacao" style="display: none;">A educação financeira é o processo de adquirir
+                        conhecimento e habilidades para tomar decisões financeiras informadas e eficazes. Com uma base
+                        sólida em educação financeira, é possível evitar dívidas, controlar o orçamento mensal, poupar
+                        dinheiro e conquistar objetivos. Para aprimorar sua educação financeira, considere as seguintes
+                        ações: <br> <br>
+
+                        1. <span style="color: #c19d31;">Aprenda sobre finanças pessoais</span>: Estude tópicos como
+                        orçamento, poupança, investimentos e gestão
+                        de dívidas. <br><br>
+
+                        2. <span style="color: #c19d31;">Pratique o que aprendeu</span>: Aplique os conceitos em sua
+                        vida diária, monitorando receitas e
+                        despesas, e ajustando conforme necessário. <br><br>
+
+                        3. <span style="color: #c19d31;">Busque orientação profissional</span>: Considere consultar um
+                        planejador financeiro para obter
+                        aconselhamento personalizado. <br><br>
+
+                        4. <span style="color: #c19d31;">Eduque-se continuamente</span>: Mantenha-se atualizado sobre
+                        mudanças econômicas e financeiras que
+                        possam impactar suas finanças pessoais. <br><br>
+
+                        Investir em educação financeira é fundamental para alcançar a independência financeira e
+                        garantir um futuro mais seguro e próspero.<br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Direcional</span></i>
+                    </p>
                 </div>
             </div>
         </div>
@@ -116,38 +212,103 @@
                 rendimentos, é o primeiro passo para fazer o dinheiro trabalhar a nosso favor e alcançar maior segurança
                 financeira.</p>
 
-                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
 
-                    <div class="containerPilares" id="containerPerfil" onclick="abrirPilaresInvestimento('perfil')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Perfil</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_perfil" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                <div class="containerPilares" id="containerPerfil" onclick="abrirPilaresInvestimento('perfil')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Perfil</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-    
-                    <div class="containerPilares" id="containerRiscoGanho" onclick="abrirPilaresInvestimento('riscoGanho')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Risco e Ganho</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_riscoganho" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
-                    </div>
-    
-                    <div class="containerPilares" id="containerDisciplina" onclick="abrirPilaresInvestimento('disciplina')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Constância e Disciplina</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_disciplina" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
-                    </div>
-    
-                    <div class="containerPilares" id="containerDiversificacao" onclick="abrirPilaresInvestimento('diversificacao')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Diversificação</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_diversificacao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                    <p id="p_perfil" style="display: none;">Compreender seu perfil de investidor é essencial para fazer
+                        escolhas financeiras alinhadas às suas necessidades e tolerância ao risco. Existem três perfis
+                        principais: conservador, moderado e arrojado. Investidores conservadores priorizam segurança e
+                        estabilidade, enquanto os moderados buscam equilíbrio entre risco e retorno. Já os arrojados
+                        estão dispostos a assumir maiores riscos em busca de retornos mais elevados. Identificar seu
+                        perfil ajuda a definir estratégias adequadas e a evitar decisões impulsivas. <br><br>
 
-                        <video src=""></video>
-                    </div>
+                        1. <span style="color: #c19d31;">Definição</span>: Refere-se ao estilo de investidor que você é,
+                        com base na tolerância
+                        ao risco e
+                        objetivos financeiros. <br><br>
+                        2. <span style="color: #c19d31;">Tipos</span>: Os perfis podem ser conservador, moderado ou
+                        arrojado, variando conforme
+                        a aceitação de
+                        riscos. <br><br>
+                        3. <span style="color: #c19d31;">Importância</span>: Identificar seu perfil permite tomar
+                        decisões de investimento mais
+                        alinhadas às suas metas. <br><br>
+
+                        4. <span style="color: #c19d31;">Conceito</span>: Essa relação expressa que maiores retornos
+                        potenciais geralmente envolvem riscos mais
+                        altos. <br> <br>
+
+                        5. <span style="color: #c19d31;">Equilíbrio</span>: Investimentos de baixo risco, como renda
+                        fixa, oferecem segurança, enquanto ativos de risco elevado, como ações, podem trazer altos
+                        retornos.
+                    </p>
                 </div>
+
+                <div class="containerPilares" id="containerRiscoGanho" onclick="abrirPilaresInvestimento('riscoGanho')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Risco e Ganho</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_riscoganho" style="display: none;">O risco está diretamente relacionado ao retorno esperado
+                        em investimentos: quanto maior o risco, maior o potencial de ganho, mas também o de perda. Saber
+                        avaliar o equilíbrio entre risco e retorno é fundamental para montar uma carteira que esteja de
+                        acordo com seus objetivos e prazos. Diversificar e estudar as opções disponíveis no mercado é a
+                        chave para minimizar riscos enquanto se busca maximizar ganhos. <br><br>
+
+                        1. <span style="color: #c19d31;">Conceito</span>: Relação entre a possibilidade de perda e o
+                        potencial de retorno em um investimento. <br><br>
+
+                        2. <span style="color: #c19d31;">Equilíbrio</span>: Investimentos de maior risco têm potencial
+                        para maiores ganhos, mas também para perdas mais significativas. <br><br>
+
+                        3. <span style="color: #c19d31;">Estratégia</span>: Avaliar e diversificar os investimentos para
+                        minimizar perdas e potencializar ganhos. <br><br>
+                    </p>
+                </div>
+
+                <div class="containerPilares" id="containerDisciplina" onclick="abrirPilaresInvestimento('disciplina')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Constância e Disciplina</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_disciplina" style="display: none;">Construir riqueza exige constância e disciplina.
+                        Investir regularmente, mesmo que em pequenas quantias, cria o hábito e permite que os ganhos se
+                        acumulem ao longo do tempo. Além disso, manter o foco em suas metas financeiras e evitar
+                        decisões emocionais, especialmente durante períodos de volatilidade, garante que você continue
+                        avançando em direção aos seus objetivos. <br><br>
+
+                        1. <span style="color: #c19d31;">Importância</span>: Investir de forma regular e consistente
+                        ajuda a construir patrimônio ao longo do tempo. <br><br>
+                        2. <span style="color: #c19d31;">Hábito</span>: Criar metas e evitar decisões impulsivas são
+                        fundamentais para manter o foco. <br><br>
+                        3. <span style="color: #c19d31;">Benefício</span>: Pequenas contribuições frequentes podem gerar
+                        grandes resultados no futuro. <br><br>
+                    </p>
+                </div>
+
+                <div class="containerPilares" id="containerDiversificacao"
+                    onclick="abrirPilaresInvestimento('diversificacao')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Diversificação</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_diversificacao" style="display: none;">A diversificação é uma estratégia essencial para
+                        reduzir riscos em investimentos. Ao distribuir recursos entre diferentes tipos de ativos (como
+                        ações, renda fixa, fundos e imóveis) e setores, é possível minimizar o impacto de eventuais
+                        perdas em um único investimento. Uma carteira bem diversificada protege o patrimônio e aumenta
+                        as chances de obter retornos consistentes ao longo do tempo. <br><br>
+
+                        1. <span style="color: #c19d31;">Definição</span>: Estratégia que distribui os investimentos em
+                        diferentes ativos para reduzir riscos. <br><br>
+                        2. <span style="color: #c19d31;">Vantagem</span>: Minimiza o impacto de perdas específicas e
+                        proporciona maior estabilidade. <br><br>
+                        3. <span style="color: #c19d31;">Exemplo</span>: Combinar ações, renda fixa e fundos
+                        imobiliários para equilibrar a carteira. <br><br>
+                    </p>
+
+                    <video src=""></video>
+                </div>
+            </div>
         </div>
 
         <div id="div_controle_dividas" style="display: none;">
@@ -158,36 +319,114 @@
                 dos juros e liberar recursos para outros objetivos financeiros, alcançando maior estabilidade e
                 tranquilidade na vida financeira.</p>
 
-                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 5%;">
 
-                    <div class="containerPilares" id="containerConstancia" onclick="abrirPilaresControle('constancia')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Consciência Financeira</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_constancia" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
+                <div class="containerPilares" id="containerConstancia" onclick="abrirPilaresControle('constancia')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Consciência Financeira</h3> <img src="Images/buttonArrow.png" alt="">
                     </div>
-    
-                    <div class="containerPilares" id="containerPagamento" onclick="abrirPilaresControle('pagamento')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Planejamento de Pagamento</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_pagamento" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
-                    </div>
-    
-                    <div class="containerPilares" id="containerReducao" onclick="abrirPilaresControle('reducao')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Redução de Gastos</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_reducao" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
-                    </div>
-    
-                    <div class="containerPilares" id="containerHabitos" onclick="abrirPilaresControle('habitos')">
-                        <div class="barraSuperiorPilares">
-                            <h3>Mudança de Hábitos</h3> <img src="Images/buttonArrow.png" alt="">
-                        </div>
-                        <p id="p_habitos" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis odio, consequatur praesentium totam alias delectus itaque, incidunt in maiores consectetur? Officiis id aliquid voluptatum eos eius aspernatur temporibus eveniet?</p>
-                    </div>
+                    <p id="p_constancia" style="display: none;">Ter consciência financeira é o primeiro passo para lidar
+                        com dívidas. Envolve entender claramente sua situação financeira atual, incluindo a origem das
+                        dívidas, prazos e taxas de juros. Essa análise permite identificar comportamentos que levam ao
+                        endividamento, como gastos impulsivos ou má gestão de recursos, e encontrar soluções práticas
+                        para resolvê-los <br><br>
+
+                        1. <span style="color: #c19d31;">Mapeamento de Receitas e Despesas</span>
+                        Liste todas as entradas e saídas de dinheiro para entender como os recursos estão sendo
+                        utilizados. Essa visão clara é o primeiro passo para identificar áreas onde você pode
+                        economizar. <br><br>
+
+                        2. <span style="color: #c19d31;">Identificação de Comportamentos Financeiros</span>
+                        Analise hábitos de consumo para identificar padrões negativos, como gastos impulsivos ou
+                        excessivos em categorias não essenciais. Isso permite ajustar seu comportamento de forma mais
+                        consciente. <br><br>
+
+                        3. <span style="color: #c19d31;">Educação Financeira</span>
+                        Buscar informações sobre finanças pessoais ajuda a tomar decisões mais embasadas e evita
+                        armadilhas financeiras. Considere cursos ou conteúdos online focados em organização e
+                        planejamento. <br><br>
+                    
+                        <i><span style="color: darkgray;">Fonte: Unicruz</span></i>
+                    </p>
                 </div>
+
+                <div class="containerPilares" id="containerPagamento" onclick="abrirPilaresControle('pagamento')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Planejamento de Pagamento</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_pagamento" style="display: none;">O planejamento de pagamento consiste em criar um
+                        cronograma detalhado para quitar dívidas. Isso inclui priorizar débitos com taxas de juros mais
+                        altas, negociar condições de pagamento com credores e reservar uma parcela do orçamento mensal
+                        para amortizar as dívidas de forma consistente. Este método reduz custos e acelera a quitação
+                        <br><br>
+
+                        1. <span style="color: #c19d31;">Criação de uma Lista de Prioridades</span>
+                        Ordene as dívidas por fatores como taxas de juros e prazos. Pagar primeiro as dívidas com maior
+                        custo reduz o impacto financeiro total. <br><br>
+
+                        2. <span style="color: #c19d31;">Negociação com Credores</span>
+                        Muitos credores estão abertos a renegociar taxas, prazos e valores das parcelas, especialmente
+                        se perceberem o esforço para quitar a dívida. <br><br>
+
+                        3. <span style="color: #c19d31;">Definição de um Percentual Mensal</span>
+                        Reserve uma parte fixa da sua renda para o pagamento das dívidas. Isso evita comprometer o
+                        orçamento com outras despesas e acelera o processo de quitação <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Unicruz</span></i>
+                    </p>
+                </div>
+
+                <div class="containerPilares" id="containerReducao" onclick="abrirPilaresControle('reducao')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Redução de Gastos</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_reducao" style="display: none;">Identificar e eliminar despesas desnecessárias é crucial
+                        para liberar recursos destinados ao pagamento de dívidas. Reduzir custos com assinaturas,
+                        compras supérfluas ou serviços não essenciais pode ter um impacto significativo no orçamento,
+                        criando uma base mais sólida para quitar débitos e prevenir novos endividamentos <br><br>
+
+                        1. <span style="color: #c19d31;">Avaliação de Gastos Fixos e Variáveis</span>
+                        Analise as despesas recorrentes, como assinaturas e contas mensais, para identificar onde cortar
+                        custos sem comprometer a qualidade de vida. <br><br>
+
+                        2. <span style="color: #c19d31;">Planejamento de Compras</span>
+                        Crie listas de compras e defina orçamentos para evitar compras impulsivas. Promoções podem ser
+                        úteis, mas só devem ser aproveitadas para itens realmente necessários. <br><br>
+
+                        3. <span style="color: #c19d31;">Substituições e Reutilizações</span>
+                        Explore opções mais econômicas para produtos e serviços, além de reutilizar itens ao invés de
+                        comprar novos. <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Portal de Eventos Unuuí</span></i>
+                    </p>
+                </div>
+
+                <div class="containerPilares" id="containerHabitos" onclick="abrirPilaresControle('habitos')">
+                    <div class="barraSuperiorPilares">
+                        <h3>Mudança de Hábitos</h3> <img src="Images/buttonArrow.png" alt="">
+                    </div>
+                    <p id="p_habitos" style="display: none;">A mudança de hábitos financeiros é fundamental para evitar
+                        a recorrência de dívidas. Isso inclui adotar práticas como viver dentro dos limites do
+                        orçamento, priorizar poupança e investimentos e evitar o uso excessivo de crédito. Uma
+                        transformação gradual nos comportamentos financeiros garante maior estabilidade a longo prazo​ <br><br>
+
+                        <span style="color: #c19d31;">Criação de Metas Realistas</span>
+                        Estabeleça objetivos financeiros específicos, como poupar uma certa quantia mensal ou eliminar
+                        uma dívida em um período definido, e trabalhe para atingi-los. <br><br> 
+
+                        <span style="color: #c19d31;">Uso Consciente do Crédito</span>
+                        Evite recorrer a cartões de crédito ou empréstimos sem planejamento. Utilize essas ferramentas
+                        apenas quando tiver certeza de que poderá pagar dentro do prazo.<br><br>
+
+                        <span style="color: #c19d31;">Construção de um Fundo de Reserva</span>
+                        Adote o hábito de guardar uma parte da renda mensal para emergências. Essa prática reduz a
+                        necessidade de se endividar em situações inesperadas.
+                        <br><br>
+
+                        <i><span style="color: darkgray;">Fonte: Portal de Eventos Unuuí</span></i>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 

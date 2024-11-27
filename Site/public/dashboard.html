@@ -49,7 +49,7 @@
                         Seu Perfil de Investidor
                     </div>
                     <div class="conteudoKPI">
-                        Conservador
+                        <span id="perfil">PerfilUsuario</span>
                     </div>
                 </div>
 
@@ -111,6 +111,8 @@
     span_meta.innerHTML = sessionStorage.META_COFRE
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    perfil.innerHTML = sessionStorage.PERFIL
+    
     const chartPerfisInvestimento = document.getElementById("chartPizza");
 
     const chartPizzaQtd = new Chart(chartPerfisInvestimento, {

@@ -7,6 +7,9 @@ function trocarTela(telaAtual) {
     const divQuestao4 = document.getElementsByClassName('div_questao4')[0]
     const divQuestao5 = document.getElementsByClassName('div_questao5')[0]
 
+    const resultado = document.getElementsByClassName('div_resultadoTestePerfil')[0]
+
+
     if (telaAtual == 'iniciar') {
         divIniciar.style.display = 'none'
         divQuestao1.style.display = 'flex'
@@ -34,6 +37,10 @@ function trocarTela(telaAtual) {
         return
     }
     if (telaAtual == 'questao5') {
+        divQuestao5.style.display = 'none'
+        resultado.style.display = 'flex'
+
+        verificarResultado()
 
     }
 }
@@ -44,9 +51,11 @@ function armazenarQuestão(questao) {
     questoesSelecionadas.push(questao)
 }
 
-function verificarResultado(respostas) {
+function verificarResultado() {
 
     const respostaTeste = document.getElementById('div_implantar_resultado')
+
+    var perfilEscolhidoVar = 0  // PERFIL A SER ENVIADO PARA A API
 
     var repeticoesConservador = 0
     var repeticoesModerado = 0
@@ -62,10 +71,93 @@ function verificarResultado(respostas) {
         }
     }
 
-    if (repeticoesConservador > repeticoesModerado && repeticoesConservador > repeticoesAgressivo) {
-        respostaTeste.innerHTML = `
-        <h3>Conservador</h3>
+    respostaTeste.innerHTML = `
+    <img src='Images/spinnerSemFundo.gif' style="width: 20vh;"> <br>
+    
+    <h2>Analisando suas respostas...</h2>
+    `
+
+    setTimeout(() => {
+
+        if (repeticoesConservador > repeticoesModerado && repeticoesConservador > repeticoesAgressivo) {
+            perfilEscolhidoVar = 1
+
+            respostaTeste.innerHTML = `
+            <span id="usuario" style="color: #c19d31;">usuario</span>
+            <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
+            <h1 id='h1Conservador'>Conservador</h1>
         
-        `
-    }
+            <p>Seu perfil se encaixa nessa categoria porque você prioriza a segurança do seu dinheiro acima de tudo. Isso significa que prefere investimentos mais estáveis, mesmo que os ganhos sejam menores. Você valoriza a tranquilidade e evita correr riscos desnecessários</p>
+            <img src="Images/perfilConservador.png" alt="" id='imgConservador'>
+
+
+            <a href="" id="botaoVoltar">Voltar</a>`
+
+        }
+
+
+        if (repeticoesModerado > repeticoesConservador && repeticoesModerado > repeticoesAgressivo) {
+            perfilEscolhidoVar = 2
+
+            respostaTeste.innerHTML = `
+            <span id="usuario" style="color: #c19d31;">usuario</span>
+            <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
+            <h1 id='h1Moderado'>Moderado</h1>
+        
+            <p>Seu perfil é equilibrado! Você busca o melhor dos dois mundos: segurança para proteger seu capital e retorno consistente ao longo do tempo. Está disposto a assumir riscos moderados quando acredita que o potencial de ganhos compensa.</p>
+            <img src="Images/perfilModerado.png" alt="" id='imgModerado'>
+
+
+            <a href="" id="botaoVoltar">Voltar</a>`
+
+        }
+
+        if (repeticoesAgressivo > repeticoesConservador && repeticoesAgressivo > repeticoesModerado) {
+            perfilEscolhidoVar = 3
+
+            respostaTeste.innerHTML = `
+            <span id="usuario" style="color: #c19d31;">usuario</span>
+            <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
+            <h1 id='h1Agressivo'>Agressivo</h1>
+        
+            <p>Seu perfil é arrojado! Você não tem medo de correr riscos maiores, pois entende que isso pode trazer grandes recompensas. Seu foco está no longo prazo, e você está confortável com as oscilações naturais do mercado para alcançar seus objetivos financeiros</p>
+            <img src="Images/perfilAgressivo.jpg" alt="" id='imgAgressivo'>
+
+
+            <a href="" id="botaoVoltar">Voltar</a>`
+
+        }
+
+
+        var idUsuarioVar = sessionStorage.getItem('ID_USER')
+
+        fetch('usuarios/armazenarPerfilInvestidor', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                perfilEscolhidoServer: perfilEscolhidoVar,
+                idUsuarioServer: idUsuarioVar
+            })
+        })
+            .then(resposta => {
+                console.log('resposta: ', resposta)
+
+                if (resposta.ok) {
+                    return resposta.json()
+                } else {
+                    throw 'Houve um erro durante a transmissão'
+                }
+            })
+            .then(dadosUsuario => {
+                console.log('Dados do usuário recebidos: ', dadosUsuario)
+
+                sessionStorage.setItem('PERFIL', dadosUsuario.perfil)
+            })
+            .catch(erro => {
+                console.log('erro: ',)
+            })
+    }, 3000);
+
 }

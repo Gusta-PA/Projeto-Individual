@@ -10,8 +10,10 @@ function autenticar(email, senha) {
             senha, 
             fkuser, 
             meta, 
-            totalGuardado
-        FROM usuarios JOIN cofrinhos ON usuarios.idUser = cofrinhos.fkUser 
+            totalGuardado,
+            perfil
+        FROM usuarios JOIN cofrinhos ON usuarios.idUser = cofrinhos.fkUser
+        JOIN perfil ON fkperfil = idperfil
              WHERE email = '${email}' AND senha = sha2('${senha}' , 256);
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -25,8 +27,8 @@ function cadastrar(nome, email, dtNasc, senha, meta, totalGuarado) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO usuarios (nome, email, dtNasc, senha) VALUES 
-        ('${nome}', '${email}', '${dtNasc}', sha2('${senha}', 256));    
+        INSERT INTO usuarios (nome, email, dtNasc, senha, fkperfil) VALUES 
+        ('${nome}', '${email}', '${dtNasc}', sha2('${senha}', 256), 0);    
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql)
@@ -68,9 +70,21 @@ function atualizarProgressoCofrinho(atualizacao, idUsuario){
     return database.executar(instrucaoSql);
 }
 
+function inserirPerfilInvestidorUsuario(fkPerfil, idUsuario){
+    console.log('ACESSEI O MODEL InserirPerfilInvestidorUsuario')
+
+    var instrucaoSql = `
+    UPDATE usuarios SET fkPerfil = ${fkPerfil}
+        WHERE idUser = ${idUsuario};
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     definirNovaMeta,
-    atualizarProgressoCofrinho
+    atualizarProgressoCofrinho,
+    inserirPerfilInvestidorUsuario
 };

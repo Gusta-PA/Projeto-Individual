@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="Images/touroLogo.png" type="image/x-icon">
 
     <script src="JS/testePerfil.js"></script>
+    <script src="JS/login_cadastro.js"></script>
 </head>
 <body>
     <nav>
@@ -83,15 +84,14 @@
 
         <div class="div_resultadoTestePerfil" style="display: none;">
             
-            <span id="usuario">usuario</span>
-            <h1>Seu Perfil de Investidor é:</h1>
+            <img src="" alt="" >
 
-            <div id="div_implantar_resultado"></div>
+            <div id="div_implantar_resultado"></div>            
         </div>
     </div>
 </body>
 </html>
 
 <script>
-    usuario = sessionStorage.getItem('NOME_USUARIO')
+    usuario.innerHTML = sessionStorage.NOME_USUARIO
 </script>

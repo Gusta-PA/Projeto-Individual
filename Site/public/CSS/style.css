@@ -1020,7 +1020,7 @@ input:focus~.input-border {
 
 .bodyTestePerfil {
     width: 80%;
-    height: 50vh;
+    height: 80vh;
 
     display: flex;
     flex-direction: column;
@@ -1159,11 +1159,97 @@ input:focus~.input-border {
     background: linear-gradient(to left, #c19d31, #c28633);
 
     font-weight: bold;
-
-
-
 }
 
 .opcoesTestePerfil:hover {
     opacity: 0.8;
+}
+
+.div_resultadoTestePerfil {
+    display: flex;
+    flex-direction: column;
+
+
+    width: 60%;
+}
+
+.div_resultadoTestePerfil #tituloTestePerfil {
+    margin: 0;
+}
+
+#div_implantar_resultado {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+#h1Conservador {
+    margin-bottom: 0;
+    width: 60%;
+    text-align: center;
+
+    color: #12ebe0;
+}
+
+#div_implantar_resultado p {
+    text-align: center;
+}
+
+#imgConservador {
+    width: 20vw;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px #12ebe0;
+}
+
+#botaoVoltar{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    background-color: #c19d31;
+    width: 8vw;
+    height: 4vh;
+    text-align: center;
+
+    border: solid 1px rgb(255, 179, 0);
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+#botaoVoltar:hover{
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+#h1Moderado {
+    margin-bottom: 0;
+    width: 60%;
+    text-align: center;
+
+    color: #c19d31;
+}
+
+#imgModerado{
+    width: 20vw;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px #c19d31;
+}
+
+#h1Agressivo{
+    margin-bottom: 0;
+    width: 60%;
+    text-align: center;
+
+    color: #a80707;
+}
+#imgAgressivo{
+    width: 20vw;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px #e62323;
 }
