@@ -25,8 +25,7 @@
         <ul>
             <li><a href="TelaInicial.html">Conteúdos</a></li>
             <li><a href="testePerfil.html">Teste de Perfil</a></li>
-            <li>Simuladores</li>
-            <li>FAQ</li>
+            
         </ul>
 
         <div class="navBotoes">
@@ -58,7 +57,7 @@
                         Perfis Gerais
                     </div>
                     <div class="conteudoGrafico">
-                        <canvas id="chartPizza" style="padding: 5px"></canvas>
+                        <canvas id="chart" style="padding: 5px"></canvas>
                     </div>
                 </div>
             </div>
@@ -70,7 +69,7 @@
                 </div>
 
                 <div class="criarCofre" id="div_criarCofre">
-                    <h1 style="border-bottom: solid 1px #c28633;">Criar novo Cofrinho</h1>
+                    <h1 style="border-bottom: solid 1px #c28633;">Criar Nova Reserva</h1>
 
                     Nova Meta: <br>
                     <input type="Number" id="input_nova_meta" placeholder="Digite Aqui">
@@ -80,7 +79,7 @@
                 </div>
 
                 <div class="conteudoCofre" style="display: none;" id="div_conteudoCofre">
-                    <h1>Meu Cofrinho</h1>
+                    <h1>Minha Reserva</h1>
                     <p>Meta: R$ <span id="span_meta">meta</span></p>
                     <p>Total guardado: R$ <span id="guardado">0</span></p>
                     <div class="progress-bar">
@@ -95,7 +94,7 @@
                         <button onclick="atualizarProgressoAdicionarRetirar('retirar')">Retirar</button>
                     </div>
 
-                    <button style="margin-top: 3%;" onclick="novaMeta()">Novo Cofrinho</button>
+                    <button style="margin-top: 3%;" onclick="novaMeta()">Nova Reserva</button>
                 </div>
             </div>
 
@@ -112,33 +111,48 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     perfil.innerHTML = sessionStorage.PERFIL
-    
-    const chartPerfisInvestimento = document.getElementById("chartPizza");
 
-    const chartPizzaQtd = new Chart(chartPerfisInvestimento, {
-        type: "pie",
+    const ctx = document.getElementById('chart').getContext('2d');
+    const graficoPerfis = new Chart(ctx, {
+        type: 'bar',
         data: {
-            labels: ["Conservador", "Moderado", "Agressivo"], // Perfis de investidor
+            labels: ['Conservador', 'Moderado', 'Agressivo'],
             datasets: [{
-                data: [50, 30, 20], // Quantidade em cada perfil
-                backgroundColor: ["#4CAF50", "#FFC107", "#FF5722"], // Cores para cada segmento
-                borderWidth: 3, // Espessura das bordas
-                borderColor: 'black'
-            }],
+                label: 'Quantidade de Usuários',
+                data: [0, 0, 0], // Dados iniciais
+                backgroundColor: ['#4caf50', '#ff9800', '#f44336']
+            }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top', // Posição da legenda
-                },
-                tooltip: {
-                    enabled: true,
-                },
-            },
-        },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
     });
+
+    // Função para buscar dados atualizados
+    async function atualizarGrafico() {
+        try {
+            const resposta = await fetch('/usuarios/perfis');
+            const dados = await resposta.json();
+
+            // Atualiza os dados do gráfico
+            graficoPerfis.data.datasets[0].data = [
+                dados.conservador,
+                dados.moderado,
+                dados.agressivo
+            ];
+            graficoPerfis.update(); // Re-renderiza o gráfico
+        } catch (erro) {
+            console.error('Erro ao atualizar gráfico:', erro);
+        }
+    }
+
+    // Atualiza o gráfico a cada 5 segundos
+    setInterval(atualizarGrafico, 5000);
+
+    // Primeira atualização ao carregar a página
+    atualizarGrafico();
 </script>
 
 </script>

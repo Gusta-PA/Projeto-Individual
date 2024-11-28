@@ -81,10 +81,26 @@ function inserirPerfilInvestidorUsuario(fkPerfil, idUsuario){
     return database.executar(instrucaoSql);
 }
 
+async function buscarPerfis() {
+    console.log("Acessando model: buscarPerfis");
+
+    const instrucaoSql = `
+        SELECT 
+            COUNT(CASE WHEN fkPerfil = 1 THEN 1 END) AS conservador,
+            COUNT(CASE WHEN fkPerfil = 2 THEN 1 END) AS moderado,
+            COUNT(CASE WHEN fkPerfil = 3 THEN 1 END) AS agressivo
+        FROM usuarios;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
     definirNovaMeta,
     atualizarProgressoCofrinho,
-    inserirPerfilInvestidorUsuario
+    inserirPerfilInvestidorUsuario,
+    buscarPerfis
 };

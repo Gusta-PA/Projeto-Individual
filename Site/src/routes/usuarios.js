@@ -24,4 +24,8 @@ router.post('/armazenarPerfilInvestidor', function (req, res) {
     usuarioController.inserirPerfilInvestidor(req, res)
 })
 
+router.get('/perfis', function (req,res) {
+    usuarioController.buscarPerfis(req,res)
+})
+
 module.exports = router;

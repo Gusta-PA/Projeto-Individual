@@ -155,10 +155,25 @@ function inserirPerfilInvestidor(req,res){
     }
 }
 
+// Controller (usuarioController.js ou similar)
+async function buscarPerfis(req, res) {
+    console.log("Acessando controller: buscarPerfis");
+
+    try {
+        const resultados = await usuarioModel.buscarPerfis();
+        res.status(200).json(resultados[0]); // Envia apenas o primeiro objeto do array
+    } catch (erro) {
+        console.error("Erro ao buscar perfis:", erro);
+        res.status(500).send("Erro ao buscar perfis.");
+    }
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
     atualizarTotalGuardado,
     definirNovaMeta,
-    inserirPerfilInvestidor
+    inserirPerfilInvestidor,
+    buscarPerfis
 }

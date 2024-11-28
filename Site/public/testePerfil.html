@@ -21,8 +21,6 @@
         <ul>
             <li><a href="TelaInicial.html">Conteúdos</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li>Simuladores</li>
-            <li>FAQ</li>
         </ul>
 
         <div class="navBotoes">
@@ -36,7 +34,7 @@
             <h1>Descubra seu Perfil de Investidor!</h1>
             <p>O teste de consiste de algumas perguntas de múltipla escolha. <br>
             Seja honesto em suas respostas.</p>
-            <p>A intenção deste teste é dar a você <span>usuario</span> um vislumbre de como você poderia começar a investir nos dias atuais!</p>
+            <p>A intenção deste teste é dar a você <span id="b_usuario">usuario</span> um vislumbre de como você poderia começar a investir nos dias atuais!</p>
             <button id="botaoTestePerfil" onclick="trocarTela('iniciar')">Iniciar Teste</button>
         </div>
 
@@ -82,11 +80,10 @@
         </div>
 
 
-        <div class="div_resultadoTestePerfil" style="display: none;">
-            
-            <img src="" alt="" >
+        <div class="div_resultadoTestePerfil" style="display: none; display: flex; flex-direction: column; justify-content: center; align-items: center;" >
+            <span id="usuario" style="color: #c19d31; display: none;">usuario</span>
 
-            <div id="div_implantar_resultado"></div>            
+            <div id="div_implantar_resultado"> </div>            
         </div>
     </div>
 </body>
@@ -94,4 +91,5 @@
 
 <script>
     usuario.innerHTML = sessionStorage.NOME_USUARIO
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
 </script>

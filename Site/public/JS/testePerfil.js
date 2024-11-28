@@ -81,9 +81,9 @@ function verificarResultado() {
 
         if (repeticoesConservador > repeticoesModerado && repeticoesConservador > repeticoesAgressivo) {
             perfilEscolhidoVar = 1
-
+            usuario.style.display = 'flex'
             respostaTeste.innerHTML = `
-            <span id="usuario" style="color: #c19d31;">usuario</span>
+            
             <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
             <h1 id='h1Conservador'>Conservador</h1>
         
@@ -98,9 +98,9 @@ function verificarResultado() {
 
         if (repeticoesModerado > repeticoesConservador && repeticoesModerado > repeticoesAgressivo) {
             perfilEscolhidoVar = 2
-
+            usuario.style.display = 'flex'
             respostaTeste.innerHTML = `
-            <span id="usuario" style="color: #c19d31;">usuario</span>
+            
             <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
             <h1 id='h1Moderado'>Moderado</h1>
         
@@ -114,9 +114,10 @@ function verificarResultado() {
 
         if (repeticoesAgressivo > repeticoesConservador && repeticoesAgressivo > repeticoesModerado) {
             perfilEscolhidoVar = 3
+            usuario.style.display = 'flex'
 
             respostaTeste.innerHTML = `
-            <span id="usuario" style="color: #c19d31;">usuario</span>
+            
             <h2 id="tituloTestePerfil">Seu Perfil de Investidor é:</h2>
             <h1 id='h1Agressivo'>Agressivo</h1>
         
